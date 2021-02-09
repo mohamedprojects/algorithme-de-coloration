@@ -19,13 +19,13 @@ def coloration(matrice_adj):
             if i not in s:
               s.append(i)
   couleur_liste = {}
-  current_color = 1
+  couleur_actuelle = 1
   for sommet in sommets:
     if sommet not in couleur_liste:
-      couleur_liste[sommet] = "C"+str(current_color)
+      couleur_liste[sommet] = "C"+str(couleur_actuelle)
     for sommet2 in s:
       if sommet in graph and sommet2 not in graph[sommet] and sommet2 not in couleur_liste:
-        couleur_liste[sommet2] = "C"+str(current_color)
-    if "C"+str(current_color) in couleur_liste.values():
-      current_color +=1         
+        couleur_liste[sommet2] = "C"+str(couleur_actuelle)
+    if "C"+str(couleur_actuelle) in couleur_liste.values():
+      couleur_actuelle +=1         
   return couleur_liste
